@@ -28,11 +28,8 @@ class ClientCredentialGrant {
 
         try {
             IAuthenticationResult result = getAccessTokenByClientCredentialGrant();
-            String usersListFromGraph = getUsersListFromGraph(result.accessToken());
+            System.out.println(getFilesDetailsGraph(result.accessToken()));
 
-            System.out.println("Users in the Tenant = " + usersListFromGraph);
-            System.out.println("Press any key to exit ...");
-            System.in.read();
 
         } catch(Exception ex){
             System.out.println("Oops! We have an exception of type - " + ex.getClass());
@@ -47,6 +44,7 @@ class ClientCredentialGrant {
                 clientId,
                 ClientCredentialFactory.createFromSecret(secret))
                 .authority(authority)
+                .applicationName("cloud-file-analyser")
                 .build();
 
         // With client credentials flows the scope is ALWAYS of the shape "resource/.default", as the
@@ -59,8 +57,8 @@ class ClientCredentialGrant {
         return future.get();
     }
 
-    private static String getUsersListFromGraph(String accessToken) throws IOException {
-        URL url = new URL("https://graph.microsoft.com/v1.0/users");
+    private static String getFilesDetailsGraph(String accessToken) throws IOException {
+        URL url = new URL("https://graph.microsoft.com/v1.0/me/drive/root/children");
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 
         conn.setRequestMethod("GET");
