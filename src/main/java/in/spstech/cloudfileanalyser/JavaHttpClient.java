@@ -22,15 +22,11 @@ import java.util.Map;
 
 public class JavaHttpClient {
 
-    public static final String CLIENT_ID = "8c7a3a91-cc76-48b5-aed2-93e1791682f1";
-    //"a232b40c-6d2a-426a-ba84-38e7fe0b9711";
-    public static final String CLIENT_SECRET = "2vVnbV.Cz._vIbz1isd1_62G3LxGQ-Qqg4";
-    //"em0lVI4-qp41Lan.~z6s.V-X~8eHM49G.g";
-    public static final String USER_NAME = "sumitpal@klassify.org";
-    //"sumitpalsingh007_gmail.com#EXT#@sumitpalsingh007gmail.onmicrosoft.com";
-    public static final String PASSWORD = "IAmEnough@1";
-    public static final String URl = "https://login.microsoftonline.com/adc279f0-657c-4bc8-9e3e-f3665ae24f5b/oauth2/token";
-    //"https://login.microsoftonline.com/sumitpalsingh007gmail.onmicrosoft.com/oauth2/token";
+    public static final String CLIENT_ID = "";
+    public static final String CLIENT_SECRET = "";
+    public static final String USER_NAME = "";
+    public static final String PASSWORD = "";
+    public static final String URl = "";
 
     public static void main(String[] args) throws IOException {
         HttpClient httpClient = new DefaultHttpClient();
